@@ -8,8 +8,6 @@ import ErrorIcon from "assets/svg/error.svg";
 // import { useModalContext } from "context/ModalContext";
 
 const Toast = ({ icon, description, showModal, setShowModal }) => {
-  // const { showModal, setShowModal } = useModalContext();
-  // console.log(showModal);
 
   useEffect(() => {
     if (showModal === true) {

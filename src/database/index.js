@@ -1,6 +1,7 @@
-const database = [
+export const database = [
     {
         email: 'skillztheprogrammer@gmail.com',
         password: 'awesome'
     }
 ]
+

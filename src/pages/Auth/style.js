@@ -42,6 +42,7 @@ export const IText = styled.p`
     text-align: center;
     letter-spacing: -0.03em;
     margin-top: 15px;
+    margin-bottom: 15px;
 
     ${media.mobile`
         width: 92%;
@@ -56,7 +57,7 @@ export const RavenLoginForm = styled.form`
     `}
 `
 export const RavenLoginInput = styled.input`
-    padding: 10px;
+    padding: 13px;
     width: 100%;
     background-color: ${BrandColors.inputGrey};
     border: none;
@@ -83,9 +84,9 @@ export const ForgotDiv = styled.div`
 `
 
 export const RavenLoginButton = styled.button`
-    margin-top: 20px;
+    margin-top: 30px;
     width: 100%;
-    padding: 10px;
+    padding: 13px;
     color: ${BrandColors.gold};
     background: transparent;
     cursor: pointer;
