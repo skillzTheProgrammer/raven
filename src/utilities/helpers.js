@@ -1,0 +1,1 @@
+export const Logger =(...data)=> console.log(...data)
