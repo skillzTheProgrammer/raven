@@ -1,14 +1,15 @@
 import styled from "styled-components/macro";
 import { SlideDown } from "GlobalStyles/ravenStyle/animations";
 import media from "GlobalStyles/utils/media";
+import BrandColors from "GlobalStyles/utils/colors";
 
 
 export const Container = styled.div`
   display: ${({ showModal }) => (showModal ? "flex" : "none")};
   position: fixed;
-  top: 2rem;
+  bottom: 6rem;
   margin: auto;
-  background-color: #FF4B3E;
+  background-color: ${BrandColors.gold};
   width: 50%;
   z-index: 10;
   left: 26%;

@@ -1,6 +1,6 @@
 import BrandColors from 'GlobalStyles/utils/colors'
 import media from 'GlobalStyles/utils/media'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 export const LoginBody = styled.div`
     width: 100%;
@@ -9,6 +9,10 @@ export const LoginBody = styled.div`
     color: ${BrandColors.white};
     display: flex;
     justify-content: center;
+
+    ${media.largeDesktop`
+        align-items: center;
+    `}
 `
 export const LoginDiv = styled.div`
     /* border: 1px solid ${BrandColors.gold}; */

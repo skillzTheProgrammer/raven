@@ -1,9 +1,10 @@
 import React from 'react'
+import { ApplicationBody } from './style'
 
 export default function Application() {
     return (
-        <div>
+        <ApplicationBody>
             <h1>Application</h1>
-        </div>
+        </ApplicationBody>
     )
 }

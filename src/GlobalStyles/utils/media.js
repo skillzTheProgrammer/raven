@@ -12,8 +12,8 @@ const media = {
   smallMobile: mediaQuery`max-width: 320px`, // iphone 5/SE 😂
   mobile: mediaQuery`max-width: 480px`, // mobile
   tablet: mediaQuery`max-width: 768px`, // tablets
-  smallDesktop: mediaQuery`min-width: 1024px`, // tablets landscape, small desktops
-  smallDesktopMinimum: mediaQuery`max-width: 1024px`, // tablets landscape, small desktops
+  smallDesktop: mediaQuery`max-width: 1024px`, // tablets landscape, small desktops
+  largeDesktop: mediaQuery`min-width: 1024px`, // tablets landscape, small desktops
   print: mediaQuery`print`,
 };
 

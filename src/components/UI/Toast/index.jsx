@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { Container, Paragraph } from "./style";
-import SuccessIcon from "assets/svg/success.svg";
-import ErrorIcon from "assets/svg/error.svg";
+// import SuccessIcon from "assets/svg/success.svg";
+// import ErrorIcon from "assets/svg/error.svg";
 // import CancelIcon from "assets/svg/cancelIcon.svg";
 // import ToastContextProvider from "context/ToastContext";
 // import { ToastContext } from "context/ToastContext";
 // import { useModalContext } from "context/ModalContext";
 
-const Toast = ({ icon, description, showModal, setShowModal }) => {
+const Toast = ({ description, showModal, setShowModal }) => {
 
   useEffect(() => {
     if (showModal === true) {
@@ -20,7 +20,7 @@ const Toast = ({ icon, description, showModal, setShowModal }) => {
   return (
     // <ToastContextProvider>
       <Container showModal={showModal}>
-        <img
+        {/* <img
           src={`${
             icon === "success"
               ? SuccessIcon
@@ -29,7 +29,7 @@ const Toast = ({ icon, description, showModal, setShowModal }) => {
               : null
           }`}
           alt=""
-        />
+        /> */}
         <Paragraph style={{color:'white'}}>{description} </Paragraph>
         {/* <img
           className="cancel"
