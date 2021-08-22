@@ -1,7 +1,7 @@
 import MediaPlayer from 'components/MediaPlayer/MediaPlayer'
 import { useAuthContext } from 'context/AuthContext'
 import useAgora from 'Hooks/useAgora'
-import React, { useEffect } from 'react'
+import React from 'react'
 import AppFooter from './footer/AppFooter'
 import AppNav from './Navbar'
 import { ApplicationBody, AppBodyDiv } from './style'
@@ -15,13 +15,9 @@ export default function Application() {
     //   join(user.data.name)
     // })
 
-    
 
-    useEffect(()=>{
-        join(user.data.name)
-    },[join, user.data.name])
     return (
-        <ApplicationBody>
+        <ApplicationBody onLoad={()=>join(user.data.name)}>
             <AppNav
                 users={remoteUsers.length}
             />
