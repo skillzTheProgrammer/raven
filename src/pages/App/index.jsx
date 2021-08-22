@@ -15,9 +15,11 @@ export default function Application() {
     //   join(user.data.name)
     // })
 
+    
+
     useEffect(()=>{
         join(user.data.name)
-    },[])
+    },[join, user.data.name])
     return (
         <ApplicationBody>
             <AppNav
