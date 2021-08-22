@@ -1,4 +1,5 @@
 import BrandColors from 'GlobalStyles/utils/colors'
+import media from 'GlobalStyles/utils/media'
 import styled from 'styled-components/macro'
 
 export const SwitcherBody = styled.div`
@@ -8,6 +9,10 @@ export const SwitcherBody = styled.div`
     /* border: 2px solid red; */
     display: flex;
     background-color: ${({shouldSwitch }) => (shouldSwitch==='no' ? BrandColors.black : BrandColors.homeShade )};
+
+    ${media.mobile`
+        flex-direction: column;
+    `}
 `
 
 export const ImageArea = styled.img`
@@ -16,7 +21,7 @@ export const ImageArea = styled.img`
 
 export const FirstArea = styled.div`
     width: 50%;
-    order: 0;
+    order: ${({shouldSwitch})=> shouldSwitch==='no'? 1 : 2};
 
     h1{
         font-style: normal;
@@ -37,10 +42,19 @@ export const FirstArea = styled.div`
         letter-spacing: -0.03em;
         margin-top:  20px;
     }
+
+    ${media.mobile`
+        width: 100%;
+        margin: 20px 0;
+    `}
 `
 
 export const SecondArea =styled.div`
     background-color: ${BrandColors.homeGrey};
     height: 310px;
     width: 40%;
+
+    ${media.mobile`
+        width: 100%;
+    `}
 `
