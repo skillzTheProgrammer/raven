@@ -1,10 +1,35 @@
-import React from 'react'
-import { ApplicationBody } from './style'
+import MediaPlayer from 'components/MediaPlayer/MediaPlayer'
+import { useAuthContext } from 'context/AuthContext'
+import useAgora from 'Hooks/useAgora'
+import React, { useEffect } from 'react'
+import AppFooter from './footer/AppFooter'
+import AppNav from './Navbar'
+import { ApplicationBody, AppBodyDiv } from './style'
 
 export default function Application() {
+
+    const {user} = useAuthContext()
+    const {remoteUsers, localVideoTrack, joinState,client,localAudioTrack,join} = useAgora()
+
+    // const joinStream = useCallback(()=>{
+    //   join(user.data.name)
+    // })
+
+    useEffect(()=>{
+        join(user.data.name)
+    },[])
     return (
         <ApplicationBody>
-            <h1>Application</h1>
+            <AppNav
+                users={remoteUsers.length}
+            />
+            <AppBodyDiv >
+                <MediaPlayer user='Local'  userID={client.uid} videoTrack={localVideoTrack} audioTrack={localAudioTrack}></MediaPlayer>
+                {joinState?remoteUsers?.map(user => (                 
+                    <MediaPlayer key={user.uid} user='Remote' userID={user.uid} videoTrack={user.videoTrack} audioTrack={user.audioTrack}></MediaPlayer>
+                )):null}
+            </AppBodyDiv>
+            <AppFooter />
         </ApplicationBody>
     )
 }

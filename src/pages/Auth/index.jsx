@@ -4,11 +4,14 @@ import Logo from 'assets/svg/logo.svg'
 import {loginUser} from './services'
 import Toast from 'components/UI/Toast'
 import { APP } from 'Routes/route'
+import { useAuthContext } from 'context/AuthContext'
 
 export default function Login({history}) {
-    const [data, setData] = useState({email:'',password:'',})
+    const [data, setData] = useState({email:'', password:'',})
+    const [loading, setLoading] = useState(false)
     const [showToast, setShowToast] = useState(false)
     const [description, setDescription] = useState('')
+    const {user, setUser} = useAuthContext()
 
     function getInput(e){
         setData({
@@ -19,8 +22,9 @@ export default function Login({history}) {
 
     function onLogin(e){
         e.preventDefault()
+        setLoading(true)
         if(data.email.length===0 || data.password.length === 0){
-            console.log('jello')
+            setLoading(false)
             setDescription('Empty fields')
             setShowToast(true)
             return;
@@ -28,14 +32,24 @@ export default function Login({history}) {
         loginUser(data)
             .then(res=>{
                 if(res.status === 200){
+                    setUser({
+                        ...user,
+                        isAuth: true,
+                        data:{
+                            ...res.data
+                        }
+                    })
+                    setLoading(false)
                     setDescription('Access Granted')
                     setShowToast(true)
-                    return history.push(APP)
+                    history.push(APP)
+                    
                 }
                 return;
             })
             .catch(err=>{
                 console.log(err)
+                setLoading(false)
                 setDescription('Access Denied')
                 setShowToast(true)
                 return
@@ -44,10 +58,6 @@ export default function Login({history}) {
 
     useEffect(()=>{
 
-        return ()=> {
-            setDescription(description)
-            return
-        }
     })
     return (
         <LoginBody>
@@ -65,7 +75,7 @@ export default function Login({history}) {
                     <ForgotDiv>
                         <p>Forgot Password?</p>
                     </ForgotDiv>
-                    <RavenLoginButton onClick={onLogin}>Login</RavenLoginButton>
+                    <RavenLoginButton onClick={onLogin}>{!loading?'Login':'Loading'}</RavenLoginButton>
                 </RavenLoginForm>
             </LoginDiv>
         </LoginBody>
