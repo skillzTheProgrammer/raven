@@ -8,7 +8,8 @@ export default function Hompage() {
         <HomeBody>
             <Navbar />
             <Switcher />
-            <h1>HomePage</h1>
+            {/* <Switcher shouldSwitch='yes' />
+            <Switcher /> */}
         </HomeBody>
     )
 }

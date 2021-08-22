@@ -7,6 +7,7 @@ export const NavbarDiv = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: auto;
 `
 
 export const LogoArea = styled.img`
