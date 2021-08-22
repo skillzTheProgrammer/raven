@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from "react";
-import { useSecureStorage } from 'Hooks/useSecureStorage'
+import { useSecureStorage } from 'Hooks/useSecureStorage.jsx'
 
 const AuthContext = createContext();
 

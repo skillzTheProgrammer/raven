@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from "react";
+import { MediaBody } from "./style";
+import { MediaDiv } from "./style";
 
 
-const MediaPlayer = ({videoTrack, audioTrack}) => {
+const MediaPlayer = ({videoTrack, audioTrack, userID, user}) => {
   const container = useRef(null);
 
   useEffect(() => {
@@ -20,7 +22,10 @@ const MediaPlayer = ({videoTrack, audioTrack}) => {
   }, [audioTrack]);
   
   return (
-    <div ref={container}  className="video-player" style={{ width: "520px", height: "240px"}}></div>
+    <MediaBody>
+      <p>{`${user}: (${userID})`}</p>
+      <MediaDiv ref={container}></MediaDiv>
+    </MediaBody>
   );
 }
 

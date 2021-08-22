@@ -5,7 +5,8 @@ const BrandColors = {
     white: '#ffffff',
     grey: '#e5e5e5',
     homeShade: '#353535',
-    homeGrey: '#111111' 
+    homeGrey: '#111111',
+    red: '#f00000' 
 };
 
 export default BrandColors;
