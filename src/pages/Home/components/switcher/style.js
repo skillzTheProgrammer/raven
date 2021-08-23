@@ -4,11 +4,12 @@ import styled from 'styled-components/macro'
 
 export const SwitcherBody = styled.div`
     width:100%;
-    height: 500px;
+    max-width: 1300px;
+    margin: 20px 0;
     padding: 20px 0;
-    /* border: 2px solid red; */
+    justify-content: space-between;
     display: flex;
-    background-color: ${({shouldSwitch }) => (shouldSwitch==='no' ? BrandColors.black : BrandColors.homeShade )};
+    background-color: ${({shouldSwitch }) => (shouldSwitch==='no' ? BrandColors.black : BrandColors.homeGrey )};
 
     ${media.mobile`
         flex-direction: column;
@@ -21,7 +22,8 @@ export const ImageArea = styled.img`
 
 export const FirstArea = styled.div`
     width: 50%;
-    order: ${({shouldSwitch})=> shouldSwitch==='no'? 1 : 2};
+    order: ${({shouldSwitch})=> shouldSwitch==='no'? 0 : 1};
+    padding-left: ${({shouldSwitch})=> shouldSwitch==='yes'? '20px' : null}
 
     h1{
         font-style: normal;
@@ -49,8 +51,8 @@ export const FirstArea = styled.div`
     `}
 `
 
-export const SecondArea =styled.div`
-    background-color: ${BrandColors.homeGrey};
+export const SecondArea =styled.img`
+    background-color: ${({BackDrop})=>BackDrop==='yes'?BrandColors.homeShade:null};
     height: 310px;
     width: 40%;
 
