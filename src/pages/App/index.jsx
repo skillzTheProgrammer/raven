@@ -3,7 +3,7 @@ import { useAuthContext } from 'context/AuthContext'
 import useAgora from 'Hooks/useAgora'
 import React from 'react'
 import AppFooter from './footer/AppFooter'
-import AppNav from './Navbar'
+import AppNav from './header'
 import { ApplicationBody, AppBodyDiv } from './style'
 
 export default function Application() {

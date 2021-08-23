@@ -20,7 +20,7 @@ export default function AppNav({users='0', recordStatus='Record Screen'}) {
                 </RecordingDiv>
                 <WatchDiv style={{width:'200px'}}>
                     <img src={watcher} alt='watch' />
-                    <p>{users} watching</p>
+                    <p>{users + 1} user(s)</p>
                 </WatchDiv>
                 <ProfileImage>
                     
