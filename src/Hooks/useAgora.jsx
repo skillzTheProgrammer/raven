@@ -7,7 +7,7 @@ import { LOGIN } from 'Routes/route';
 const appId = 'fe911605b2f6467faf4e846035abab80'
 
 //should have stored in env but no need really since its for test
-const temptoken = '006fe911605b2f6467faf4e846035abab80IAA3izV4+rP4Hg337KYZfmODfS5pBbL0jOV+NITJMDlPUGnabjEAAAAAEACLgpZhWfEoYQEAAQBX8Shh'
+const temptoken = '006fe911605b2f6467faf4e846035abab80IAAM51B/3MC8gxaWAPjeTEWt3rzOSiZdBfd02zTzgqic82nabjEAAAAAEAALrnX4rC0qYQEAAQCsLSph'
 const channel = 'Elliot'
 
 
